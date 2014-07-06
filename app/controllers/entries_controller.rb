@@ -20,12 +20,14 @@ class EntriesController < ApplicationController
   end
 
   def update
+    @journal = Journal.find(params[:journal_id])
     @entry = Entry.find(params[:id])
     @entry.update(entry_params)
     redirect_to user_journal_path(current_user, @journal)
   end
 
   def destroy
+    @journal = Journal.find(params[:journal_id])    
     @entry = Entry.find(params[:id])
     @entry.delete
     redirect_to user_journal_path(current_user, @journal), notice: "Entry successfully deleted"

@@ -19,6 +19,10 @@
     <td>
       <img src="<%= entry.image_url %>">
     </td>
+    <td>
+      <%= link_to "Edit Entry", edit_user_journal_entry_path(current_user, @journal, entry) %>
+      <%= link_to "Delete Entry", user_journal_entry_path(current_user, @journal, entry), method: :delete %>      
+    </td>
   </tr>
   <% end %>
 </table>
