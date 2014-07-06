@@ -7,16 +7,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @user = login(params[:email], params[:password])
+    if @user = login(params[:email], params[:password], params[:remember_me])
       redirect_back_or_to user_journals_path, notice: 'Login successful'
     else
-      flash.now[:alert] = 'Login failed'
+      flash.now.alert = 'Email or password was invalid'
       render action: 'new'
     end
   end
 
   def destroy
     logout
-    redirect_to(:users, notice: 'Logged out!')
+    redirect_to root,  notice: 'Logged out!')
   end
 end

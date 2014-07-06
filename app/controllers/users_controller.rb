@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       redirect_to root, notice: "Signed up! Please log in."
     else
@@ -16,9 +15,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(current_user), notice: 'Information successfully updated'
+  end
+
+  def destroy
+    User.delete(params[:id])
+    logout
+    redirect_to root, notice: 'Account has been deleted.'
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end  
+  
 end

@@ -11,9 +11,7 @@
   <%= f.text_field :email %>
   <%= f.label :password %>
   <%= f.password_field :password %>
-  <% if current_user %>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  <% end >
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
   <%= f.submit %>
 <% end %>
