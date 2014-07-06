@@ -77,6 +77,8 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.3)
       pry (~> 0.9.10)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -156,12 +158,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg
-  pry
   pry-nav
+  pry-rails
   rails (= 4.1.1)
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)

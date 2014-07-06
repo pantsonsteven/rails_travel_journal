@@ -1,10 +1,14 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  attr_accessible :email, :password, :password_confirmation
+  validates :password,                length: { minimum: 6, too_short: "is too short, it needs to be at least 6 characters" },
+                                      confirmation: true,
+                                      presence: true, :on => :create
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  validates :password_confirmation,   presence: true
+
+  validates :email,                   uniqueness: true,
+                                      email: true,
+                                      presence: true
+                                      
 end
