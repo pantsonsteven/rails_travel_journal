@@ -1,0 +1,27 @@
+<h1>Journals#show</h1>
+<p>Find me in app/views/journals/show.html.erb</p>
+<h2>Your Entries</h2>
+
+<h2><%= @journal.title %></h2>
+
+<table>
+  <% for entry in @entries %>
+  <tr>  
+    <td>
+      <h3><%= entry.title %></h3>
+      <p>Location: <%= entry.location %></p>
+      <p>Date: <%= entry.date %></p>
+      <p>Weather: <%= entry.weather %></p>
+    </td>
+    <td>
+      <p><%= entry.text %></p>
+    </td>
+    <td>
+      <img src="<%= entry.image_url %>">
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+
+

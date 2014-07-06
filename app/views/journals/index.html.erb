@@ -2,13 +2,19 @@
 <p>Find me in app/views/journals/index.html.erb</p>
 <h2>Your Travel Journals</h2>
 
-<th>
-  <td>Journal Title</td>
-  <td>Date Created</td>
-</th>
-<% for journal in @journals %>
+<table>
   <tr>
-    <td><%= journal.title %></td>
-    <td><%= journal.created_at.to_date %></td>
+    <th>
+      Journal Title
+    </th>
+    <th>
+      Date Created
+    </th>
   </tr>
-<% end %>
+  <% for journal in @journals %>
+    <tr>
+      <td><a href="/users/<%= current_user.id %>/journals/<%= journal.id %>"><%= journal.title %></a></td>
+      <td><%= journal.created_at.to_date %></td>
+    </tr>
+  <% end %>
+</table>
