@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root, notice: "Signed up! Please log in."
+      redirect_to root_path, notice: "Signed up! Please log in."
     else
       render :new
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def destroy
     User.delete(params[:id])
     logout
-    redirect_to root, notice: 'Account has been deleted.'
+    redirect_to root_path, notice: 'Account has been deleted.'
   end
 
   private
