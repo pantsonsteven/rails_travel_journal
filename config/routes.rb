@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index, :show] do 
     resources :journals do 
-      resources :entries do
+      resources :entries, except: [:show, :index] do
       end
     end
   end
@@ -14,3 +14,4 @@ Rails.application.routes.draw do
   get   "signup"  => "users#new",         :as => "signup"
   
 end
+  

@@ -23,5 +23,8 @@
   <% end %>
 </table>
 
-
+<%= link_to "Edit Journal", edit_user_journal_path(current_user, @journal) %>
+<%= link_to "Add Entry", new_user_journal_entry_path(current_user, @journal) %>
+<%= link_to "Home", user_journals_path(current_user) %>
+<%= link_to "Delete Journal", user_journal_path(current_user, @journal), method: :delete %>
 

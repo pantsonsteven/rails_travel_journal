@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    
   end
 
   def create
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(current_user), notice: 'Information successfully updated'
+    redirect_to user_journals_path(current_user), notice: 'Information successfully updated'
   end
 
   def destroy

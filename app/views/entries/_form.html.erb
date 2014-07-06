@@ -1,0 +1,15 @@
+<%= form_for [current_user, @journal, @entry] do |f|%>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :image_url, "Image URL" %>
+  <%= f.text_field :image_url %>
+  <%= f.label :weather %>
+  <%= f.text_field :weather %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :text, "Journal Entry" %>
+  <%= f.text_area :text %>
+  <%= f.submit %>
+<% end %>
