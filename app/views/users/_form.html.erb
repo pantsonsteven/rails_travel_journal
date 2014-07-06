@@ -1,1 +1,19 @@
-_form.html.erb
+<%= form_for @user do |f|%>
+  <% if @user.errors.any? %>
+      <h2>The form has <%= pluralize(@user.errors.count, "error") %>.</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <% if current_user %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  <% end >
+  <%= f.submit %>
+<% end %>
