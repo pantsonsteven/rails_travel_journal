@@ -1,28 +1,11 @@
-== README
+##Travel Journal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Travel Journal is a simple journaling app that lets you make entries as you travel. The primary purpose of this app to function as a reference for future Rails projects. 
 
-Things you may want to cover:
+Travel Journal uses a Postgresql database and relies on Sorcery for user authentication and validation.
 
-* Ruby version
+####Gems
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Pry
+* Sorcery
+* ActiveRecord
