@@ -13,6 +13,7 @@
     Logged in as <%= current_user.email %>.
     <%= link_to "Edit Profile", edit_user_path(current_user) %>
     <%= link_to "Log out", logout_path %>
+    <%= link_to "View Your Journals", user_journals_path(current_user) %>
   <% else %>
     <%= link_to "Sign up", signup_path %> or
     <%= link_to "Log in", login_path %>.
